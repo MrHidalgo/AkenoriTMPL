@@ -1,0 +1,12 @@
+{
+  "styleLink" : [
+    "./css/fonts.min.css",
+    "./css/tmpl.min.css"
+  ],
+
+  "scriptLink" : [
+    "./script/jquery-1.11.1.min.js",
+    "./script/owl.carousel.min.js",
+    "./script/main.min.js"
+  ]
+}

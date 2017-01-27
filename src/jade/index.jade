@@ -1,0 +1,117 @@
+include _mixin/mixin
+
+-
+    var sec0Text    = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque dictum placerat. Nunc commodo dolor at urna pulvinar commodo. Sed finibus turpis at ex iaculis, at convallis enim gravida. Sed sit amet tortor vitae tellus vehicula ornare non quis tortor. Maecenas maximus est arcu, in convallis ex varius eget. Aliquam vitae pretium ante, nec efficitur arcu. Suspendisse eu bibendum turpis. Aenean vestibulum suscipit nibh, a iaculis augue accumsan vitae. Vestibulum dictum ipsum a velit tincidunt, vel suscipit felis ornare.";
+    var sec1Title   = "AKENORI – лучший помощник в городе и на природе.";
+    var sec1Text    = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque dictum placerat. Nunc commodo dolor at urna pulvinar commodo. Sed finibus turpis at ex iaculis, at convallis enim gravida. Sed sit amet tortor vitae tellus vehicula ornare non quis tortor. Maecenas maximus est arcu, in convallis ex varius eget. Aliquam vitae pretium ante, nec efficitur arcu. Suspendisse eu bibendum turpis. Aenean vestibulum suscipit nibh, a iaculis augue accumsan vitae. Vestibulum dictum ipsum a velit tincidunt, vel suscipit felis ornare.";
+    var sec2List    = [
+        "Quisque vitae mauris in dui semper efficitur vitae at ante",
+        "Quisque rhoncus turpis tellus, congue ultrices ligula facilisis a",
+        "Duis in tempus nulla, non luctus lorem"
+    ];
+    var sec3Title   = "Cras tristique odio neque, eget tristique diam";
+    var sec4List    = [
+        "Maecenas consectetur consequat nisi ut tincidunt",
+        "Quisque eget consectetur justo, sit amet cursus justo",
+        "Duis in tempus nulla, non luctus lorem",
+        "Quisque eget consectetur justo, sit amet cursus justo"
+    ];
+    var sec5List    = [
+        "Доставка по всей России",
+        "Срок от 1 до 5 дней",
+        "Оплата при получении либо онлайн"
+    ];
+
+mixin mainTitle()
+    div(class="main__title")
+        .main__title-icon-wrap
+            i.main__title-icon
+        i.main__title-line
+        p.main__title-text!= "Vestibulum dictum"
+
+
+doctype html
+html(lang="en")
+
+
+    +headSite("Akenori TMPL", linkSite.styleLink, "")
+
+
+    body
+
+        //- SECTION 0
+        section.section-0
+            .container
+                .section-0__row
+                    +mainTitle()
+
+                    p.section-0__text!= sec0Text
+
+
+        //- SECTION 1
+        section.section-1
+            .container.clearfix
+                +mainTitle()
+
+                .section-1__left
+                    p.section-1__title!= sec1Title
+                    p.section-1__text!= sec1Text
+
+                .section-1__right
+
+
+        //- SECTION 2
+        section.section-2
+            .container.clearfix
+                .section-2__left
+
+                .section-2__right
+                    ul.section-2__list
+                        -for(var i = 0, j = 1; i < sec2List.length; i++, j++)
+                            li.section-2__item
+                                p.section-2__num!= "0" + j
+                                i.section-2__line
+                                p.section-2__text!= sec2List[i]
+
+
+        //- SECTION 3
+        section.section-3
+            .container
+                +mainTitle()
+
+                p.section-3__title!= sec3Title
+
+                .section-3__block
+
+
+        //- SECTION 4
+        section.section-4.clearfix
+            .section-4__left
+            .section-4__right
+                +mainTitle()
+
+                ul.section-4__list
+                    -for(var k = 0; k < sec4List.length; k++)
+                        li.section-4__item
+                            .section-4__icon-wrap
+                                i.section-4__icon
+                            p.section-4__text!= sec4List[k]
+
+
+        //- SECTION 5
+        section.section-5.clearfix
+            .section-5__left.clearfix
+                .section-5__video
+                    a(
+                        href="javascript:void(0);"
+                        title=""
+                        class="btn__play"
+                    )
+
+            .section-5__right
+                ul.section-5__list
+                    -for(var m = 0; m < sec5List.length; m++)
+                        li.section-5__item
+                            .section-5__icon-wrap
+                                i.section-5__icon
+                            p.section-5__text!= sec5List[m]
