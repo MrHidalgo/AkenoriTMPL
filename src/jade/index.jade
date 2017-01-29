@@ -21,6 +21,34 @@ include _mixin/mixin
         "Срок от 1 до 5 дней",
         "Оплата при получении либо онлайн"
     ];
+    var sec6ListLeft = [
+        "Формат видео",
+        "Сенсор",
+        "Процессор",
+        "Линза",
+        "MicroSD",
+        "Геолокация",
+        "G-sensor",
+        "Wi-Fi",
+        "Аккумулятор",
+        "Интерфейсы",
+        "Размер",
+        "вес"
+    ];
+    var sec6ListRight = [
+        "1920*1080@30fps, 720*480@30fps",
+        "Sony Exmor IMX222LQJ",
+        "Ambarella iONE i180 624-FBGA",
+        "Sunex, F2.0, 3.4mm, 90°(HFOV)",
+        "SDHC slot (up to 32GB)",
+        "GPS+GLONASS (SKM52M)",
+        "3-Axis 222",
+        "Qualcomm Atheros AR6003",
+        "220mAh, Polymer Lithium-ion Rechargeable",
+        "Mini USB 2.0</br>HDMI 1.2 ( TV output)</br>Micro SD slot",
+        "100.4x76.1x37.8mm",
+        "91g"
+    ];
 
 mixin mainTitle()
     div(class="main__title")
@@ -115,3 +143,14 @@ html(lang="en")
                             .section-5__icon-wrap
                                 i.section-5__icon
                             p.section-5__text!= sec5List[m]
+
+        //- SECTION 6
+        section.section-6
+            .container
+                -for(var l = 0; l < sec6ListLeft.length; l++)
+                    .section-6__row
+                        .section-6__left!= sec6ListLeft[l]
+                        .section-6__center
+                        .section-6__right!= sec6ListRight[l]
+
+

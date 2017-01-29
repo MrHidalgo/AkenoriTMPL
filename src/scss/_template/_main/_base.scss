@@ -8,10 +8,10 @@
 ///
 $w-all              : return-value(dimension, all);
 
-$c-white			      : return-value(color, white);
-$c-pinkSwan  	      : return-value(color, pinkSwan);
-$c-ruby     	      : return-value(color, ruby);
-$c-nero     	      : return-value(color, nero);
+$c-white			: return-value(color, white);
+$c-pinkSwan  	    : return-value(color, pinkSwan);
+$c-ruby     	    : return-value(color, ruby);
+$c-nero     	    : return-value(color, nero);
 $c-night-rider      : return-value(color, night-rider);
 $c-dark-gray        : return-value(color, dark-gray);
 $c-silver           : return-value(color, silver);
@@ -39,6 +39,10 @@ section {
 			left: auto;
 			right: auto;
 		};
+
+		@include respond-to(small-max) {
+			width: $w-all;
+		}
 	}
 
 
@@ -46,6 +50,11 @@ section {
 		padding-top: 60px;
 		line-height: 1.7;
 		color: $c-night-rider;
+
+		@include respond-to(small-max) {
+			padding-top: 30px;
+			font-size: 14px;
+		}
 	}
 }
 ///
@@ -67,6 +76,15 @@ section {
 			right: 10px;
 			left: 100px;
 		};
+
+		@include respond-to(large-max) {
+			padding-left: 0;
+		}
+		@include respond-to(medium-max) {
+			width: $w-all;
+
+			margin-bottom: 30px;
+		}
 	}
 
 
@@ -77,6 +95,10 @@ section {
 		background-color: $c-dark-gray;
 		margin-left: 15px;
 		overflow: hidden;
+
+		@include respond-to(medium-max) {
+			width: $w-all;
+		}
 	}
 
 
@@ -90,12 +112,24 @@ section {
 			size: 20px;
 		}
 		color: $c-nero;
+
+		@include respond-to(medium-max) {
+			padding-left: 0;
+		}
+		@include respond-to(small-max) {
+			padding-top: 0;
+			font-size: 18px;
+		}
 	}
 
 
 	&__text {
 		line-height: 1.7;
 		color: $c-night-rider;
+
+		@include respond-to(small-max) {
+			font-size: 14px;
+		}
 	}
 }
 ///
@@ -115,12 +149,20 @@ section {
 		float: right;
 		width: 50%;
 		padding-left: 15px;
+
+		@include respond-to(medium-max) {
+			padding-left: 0;
+		}
 	}
 
 
 	&__left,
 	&__right {
 		height: 308px;
+
+		@include respond-to(medium-max) {
+			width: $w-all;
+		}
 	}
 
 
@@ -147,6 +189,12 @@ section {
 			family: $f-PN_bold;
 		}
 		color: $c-silver;
+
+		@include respond-to(small-max) {
+			font-size: 16px;
+			width: 40px;
+			text-align: left;
+		}
 	}
 
 
@@ -157,6 +205,13 @@ section {
 			left: 20px;
 			right: 40px;
 		};
+
+		@include respond-to(small-max) {
+			margin: {
+				left: 10px;
+				right: 20px;
+			};
+		}
 	}
 
 
@@ -166,6 +221,11 @@ section {
 			family: $f-PN_bold;
 		}
 		width: calc(100% - 160px);
+
+		@include respond-to(small-max) {
+			font-size: 18px;
+			width: calc(100% - 100px);
+		}
 	}
 }
 ///
@@ -177,6 +237,13 @@ section {
 	.main__title {
 		justify-content: flex-start;
 		margin-bottom: 140px;
+
+		@include respond-to(medium) {
+			margin-bottom: 100px;
+		}
+		@include respond-to(small-max) {
+			margin-bottom: 60px;
+		}
 	}
 
 
@@ -189,6 +256,19 @@ section {
 		font-size: 20px;
 		color: $c-nero;
 
+		@include respond-to(medium-max) {
+			padding-left: 0;
+		}
+		@include respond-to(medium) {
+			max-width: 290px;
+			margin-right: -.32em;
+		}
+		@include respond-to(small-max) {
+			font-size: 18px;
+			max-width: $w-all;
+			margin-bottom: 30px;
+		}
+
 
 		&:before {
 			content: "";
@@ -197,6 +277,10 @@ section {
 			left: 60px;
 			@include mixinDimensions(50px, 1px);
 			background-color: $c-silver;
+
+			@include respond-to(medium-max) {
+				left: 0;
+			}
 		}
 	}
 
@@ -206,17 +290,37 @@ section {
 		vertical-align: middle;
 		@include mixinDimensions(473px, 282px);
 		background-color: $c-dark-gray;
+
+		@include respond-to(medium) {
+			width: (690 - 290) * 1px;
+		}
+		@include respond-to(small-max) {
+			width: $w-all;
+		}
 	}
 }
 ///
 /// SECTION-4
 ///
 .section-4 {
+	@include respond-to(large-max) {
+		padding: {
+			left: 15px;
+			right: 15px;
+		};
+	}
 
 
 	.main__title {
 		justify-content: flex-start;
 		margin-bottom: 150px;
+
+		@include respond-to(large-max) {
+			margin-bottom: 100px;
+		}
+		@include respond-to(small-max) {
+			margin-bottom: 30px;
+		}
 	}
 
 
@@ -225,6 +329,16 @@ section {
 		height: 616px;
 		overflow: hidden;
 		background-color: $c-dark-gray;
+
+		@include respond-to(hard-max) {
+			width: 50%;
+		}
+		@include respond-to(large-max) {
+			width: $w-all;
+		}
+		@include respond-to(small-max) {
+			height: 308px;
+		}
 	}
 
 
@@ -233,6 +347,17 @@ section {
 		padding: {
 			left: 30px;
 			top: 60px;
+		}
+
+		@include respond-to(hard-max) {
+			width: 50%;
+		}
+		@include respond-to(large-max) {
+			padding: {
+				top: 30px;
+				left: 0;
+			}
+			width: $w-all;
 		}
 	}
 
@@ -247,6 +372,10 @@ section {
 		padding-right: 100px;
 		display: flex;
 		flex-flow: row wrap;
+
+		@include respond-to(hard-max) {
+			padding-right: 0;
+		}
 	}
 
 
@@ -255,6 +384,19 @@ section {
 		margin-right: 30px;
 		margin-bottom: 30px;
 		display: flex;
+
+		@include respond-to(hard-max) {
+			margin-right: 10px;
+		}
+		@include respond-to(large-max) {
+			width: $w-all/2;
+			margin-right: 0;
+			padding-right: 15px;
+		}
+		@include respond-to(small-max) {
+			width: $w-all;
+			padding-right: 0;
+		}
 	}
 
 
@@ -278,19 +420,47 @@ section {
 /// SECTION-5
 ///
 .section-5 {
+	@include respond-to(hard-max) {
+		padding: {
+			left: 15px;
+			right: 15px;
+		};
+	}
 
 
 	&__left {
 		width: 845px;
 		float: left;
+
+		@include respond-to(hard-max) {
+			width: 50%;
+		}
+		@include respond-to(medium-max) {
+			width: $w-all;
+		}
 	}
 
 
 	&__right {
 		float: left;
 		height: 392px;
-		padding-left: 130px;
+		padding-left: 110px;
 
+		@include respond-to(hard-max) {
+			width: 50%;
+		}
+		@include respond-to(large) {
+			padding-left: 55px;
+		}
+		@include respond-to(medium-max) {
+			width: $w-all;
+			padding-left: 0;
+			height: auto;
+			padding: {
+				top: 30px;
+				bottom: 30px;
+			};
+		}
 
 		&:before {
 			content: "";
@@ -307,6 +477,21 @@ section {
 		float: right;
 		@include mixinDimensions(568px, 392px);
 		background-color: $c-dark-gray;
+
+		@include respond-to(large) {
+			width: $w-all;
+		}
+		@include respond-to(medium) {
+			float: none;
+			margin: {
+				left: auto;
+				right: auto;
+			};
+		}
+		@include respond-to(small-max) {
+			width: $w-all;
+			height: 270px;
+		}
 	}
 
 
@@ -348,6 +533,90 @@ section {
 		padding-left: 15px;
 	}
 }
+///
+/// SECTION-5
+///
+.section-6 {
+	&__row {
+		display: flex;
+
+		margin-bottom: 60px;
+
+		@include respond-to(small-max) {
+			margin-bottom: 30px;
+		}
+	}
+
+
+	&__center {
+		position: relative;
+		width: 150px;
+		padding: {
+			left: 60px;
+			right: 60px;
+		};
+
+		@include respond-to(small-max) {
+			width: 50px;
+			padding: {
+				left: 10px;
+				right: 10px;
+			};
+		}
+
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: 12px;
+			@include mixinDimensions(30px, 1px);
+			background-color: $c-silver;
+
+			@include respond-to(small-max) {
+				width: 20px;
+			}
+		}
+	}
+
+
+	&__left {
+		text-align: right;
+		text-transform: uppercase;
+		font: {
+			size: 18px;
+		}
+		color: $c-silver;
+
+		@include respond-to(small-max) {
+			font-size: 14px;
+		}
+	}
+
+
+	&__right {
+
+		font: {
+			size: 20px;
+		}
+		color: $c-nero;
+
+		@include respond-to(small-max) {
+			font-size: 16px;
+		}
+	}
+
+
+	&__left,
+	&__right {
+		font-family: $f-PN_bold;
+		width: calc(50% - 75px);
+
+		@include respond-to(small-max) {
+			width: calc(50% - 40px);
+		}
+	}
+}
+
 
 
 ///
